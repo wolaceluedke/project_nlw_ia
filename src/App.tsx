@@ -10,7 +10,7 @@ import { Slider } from './components/ui/slider';
 export function App() {
   return (
     <div className='min-h-screen flex flex-col'>
-      <div className="px-6 py-3 flex items-center justify-between border-b">
+      <div className="px-6 py-1 flex items-center justify-between border-b">
         <h1 className="text-xl font-bold">upload.ai</h1>
 
         <div className="flex items-center gap-3">
@@ -44,7 +44,7 @@ export function App() {
               Lembre-se: Você pode utilizar a variável <code className='text-violet-400'>{'{Transcription}'}</code> no seu prompt para adicionar o conteúdo da transcrição do vídeo selecionado.
               </p>
         </div>
-        <aside className='w-80 space-y-6'>
+        <aside className='w-80 space-y-2'>
           <form className='space-y-6'>
             <label 
             htmlFor="video"
@@ -57,7 +57,7 @@ export function App() {
             <input type="file" id='video' accept='video/mp4' className='sr-only' />
             <Separator />
 
-            <div className='space-y-2'>
+            <div className='space-y-1'>
               <Label htmlFor='transcription_prompt'>Prompt de transcrição </Label>
               <Textarea 
               id='transcription_prompt' 
@@ -72,7 +72,7 @@ export function App() {
 
           <Separator />
 
-          <form className='space-y-6'>
+          <form className='space-y-3'>
             
           <div className='space-y-2'>
               <Label>Prompt</Label>
