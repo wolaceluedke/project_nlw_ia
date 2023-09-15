@@ -1,0 +1,28 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// cada model monta uma tabela no banco de dados
+// @id para indiciar que é uma chave primária
+// @default(uuid()) cada inserção que faça de um vídeo terá um id unico
+model Video {
+  id            String   @id @default(uuid())
+  name          String
+  path          String
+  transcription String?
+  createdAt     DateTime @default(now())
+}
+
+model Prompt {
+  id       String @id @default(uuid())
+  title    String
+  template String
+}
