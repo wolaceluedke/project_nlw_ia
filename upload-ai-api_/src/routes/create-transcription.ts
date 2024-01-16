@@ -36,6 +36,17 @@ const paramsSchema = z.object({
       prompt,
         })
 
-    return response.text
+        const transcription = response.text
+
+    await prisma.video.update({
+      where: {
+        id: videoId,
+      },
+      data: {
+        transcription: response.text,
+      }
+    })
+
+    return { transcription }
 })
 }
